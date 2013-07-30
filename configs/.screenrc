@@ -1,0 +1,38 @@
+# A beautiful bottom bar
+caption always "%{WK}%-w%<%{=B GK}%n %t%{= KW}%+w%-09="
+hardstatus alwayslastline "%{=b BW} {%l}%018=%{=B WK} %H %-028=%{YK} %Y %M %d(%D) %{RW} %C %A "
+
+# Skip things we know
+startup_message off
+
+# If we accidentally hangup, don't be all attached when we come back. 
+autodetach on
+
+# More scrollbacks
+defscrollback 10000
+
+# Disable use of the "alternate" terminal,
+# thus allowing scrollbars to function as normal in many terminal emulators! <3 it
+termcapinfo xterm* ti@:te@
+
+# Have screen update terminal emulators titlebar
+termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+defhstatus "screen ^E (^Et) | $USER@^EH"
+
+# Default shell title. For bash, place in .bashrc to update titles to current running program:
+# export PS1='\[\033k\033\\\]\u@\h:\w\$ '
+shelltitle "$ |bash"
+
+# Bind Ctrl + Left/Right arrow key to change window
+bindkey \033[D prev
+bindkey \033[C next
+
+# Open 3 windows initially
+screen bash
+title "local"
+
+screen bash
+title "local"
+
+screen bash
+title "local"

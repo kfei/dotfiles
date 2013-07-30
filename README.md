@@ -1,4 +1,4 @@
 comfortable
 ===========
 
-A comfortable bash environment and some handy configs
+A comfortable shell environment and some handy configs for Linuxers.
