@@ -1,0 +1,11 @@
+[user]
+	email = $your_mail_addr
+	name = $your_name
+
+[alias]
+        hi = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	st = status
+	br = branch
+        ci = commit
+        cia = commit --amend
+        co = checkout
