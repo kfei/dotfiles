@@ -3,3 +3,6 @@
 
 # for an sshfs storage
 sshfs#<username>@<host>:/<path>    <mount_point>      fuse    user,noauto,transform_symlinks 0 0
+
+# for a cifs storage
+//<ip_addr>/<share$>		   <mount_point>      cifs    noauto,guest,rw,uid=<uid>,gid=<uid>,iocharset=utf8,sec=ntlm 0 0

@@ -34,3 +34,12 @@ alias httpdtest='sudo /usr/sbin/apachectl -t && /usr/sbin/apachectl -t -D DUMP_V
 
 # pass options to free #
 alias free='/usr/bin/free -m -l -t'
+
+# for rdesktop
+alias 100='rdesktop -a 16 -g 1280x800 -z -k en-us -T 100 192.168.1.100 -u <username> -p <password> -r clipboard:PRIMARYCLIPBOARD -r sound:off &'
+alias 101='rdesktop -a 16 -g 1280x800 -z -k en-us -T 101 192.168.1.101 -u <username> -p <password> -d <domain> -r disk:home=/<share_path> -r clipboard:PRIMARYCLIPBOARD -r sound:off &'
+
+# misc
+alias shownet='netstat -nat | grep tcp'
+alias wwwhere='sudo python -m SimpleHTTPServer 80'
+alias googledns='sudo sh -c " echo '\''nameserver 8.8.8.8'\'' > /etc/resolv.conf "'
