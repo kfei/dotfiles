@@ -1,6 +1,8 @@
-# A beautiful bottom bar
-caption always "%{WK}%-w%<%{=B GK}%n %t%{= KW}%+w%-09="
-hardstatus alwayslastline "%{=b BW} {%l}%018=%{=B WK} %H %-028=%{YK} %Y %M %d(%D) %{RW} %C %A "
+# A nice-looking bottom bar
+caption always "%{WK}%-w%<%{=B WK}%n %t%{= KW}%+w%-09="
+# For the current path string to work, consider put this to your .bashrc:
+# PROMPT_COMMAND='echo -ne "\033]0;${PWD:$(( (${#PWD}-45) >= 0 ? (${#PWD}-45) : 0 ))}\007"'
+hardstatus alwayslastline "%{=b kG} [%h]%{= kk}%{-}%= [%l] %{=B BW} %H %{YK} %Y-%m-%d (%D) %{WK} %C %A "
 
 # Skip things we know
 startup_message off
@@ -10,6 +12,9 @@ autodetach on
 
 # More scrollbacks
 defscrollback 10000
+
+# Bind Shift+k to kill
+bind ^k kill
 
 # Disable use of the "alternate" terminal,
 # thus allowing scrollbars to function as normal in many terminal emulators! <3 it
@@ -23,16 +28,28 @@ defhstatus "screen ^E (^Et) | $USER@^EH"
 # export PS1='\[\033k\033\\\]\u@\h:\w\$ '
 shelltitle "$ |bash"
 
-# Bind Ctrl + Left/Right arrow key to change window
-bindkey \033[D prev
-bindkey \033[C next
+# Bind key to change window
+# Ctrl+Left
+bindkey "\033[D" prev
+bindkey "^[[1;5D" prev
+# Ctrl+Right
+bindkey "\033[C" next
+bindkey "^[[1;5C" next
+
+# Bind some F-key
+# bind F7 to detach screen session (to background)
+bindkey -k k7 detach
+# bind F8 to kill current screen window
+bindkey -k k8 kill
+# bind F9 to create a new screen
+bindkey -k k9 screen
+# bind F10 to rename current screen window
+bindkey -k k; title
 
 # Open 3 windows initially
 screen bash
 title "local"
-
 screen bash
 title "local"
-
 screen bash
 title "local"
