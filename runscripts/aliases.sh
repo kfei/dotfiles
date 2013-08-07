@@ -43,4 +43,5 @@ alias 101='rdesktop -a 16 -g 1280x800 -z -k en-us -T 101 192.168.1.101 -u <usern
 # misc
 alias shownet='netstat -nat | grep tcp'
 alias wwwhere='sudo python -m SimpleHTTPServer 80'
+alias vncsrv='x11vnc -nopw -display :0.0 -noremote -xinerama -clip xinerama0 -viewonly'
 alias googledns='sudo sh -c " echo '\''nameserver 8.8.8.8'\'' > /etc/resolv.conf "'
