@@ -1,0 +1,43 @@
+# /etc/network/interfaces
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# auto eth0
+# iface eth0 inet manual
+
+auto vlan20
+iface vlan20 inet manual
+        up ifconfig $IFACE up
+        vlan_raw_device eth0
+
+auto vlan30
+iface vlan30 inet manual
+      up ifconfig $IFACE up
+      vlan_raw_device eth0
+
+auto br0
+iface br0 inet static
+        address 192.168.0.254
+        netmask 255.255.255.0
+        bridge_stp off
+        up ifconfig $IFACE up
+
+auto br20
+iface br20 inet static
+        address 192.168.20.100
+        netmask 255.255.255.0
+        gateway 192.168.20.254
+        bridge_stp off
+        bridge_ports vlan20
+        up ifconfig $IFACE up
+
+auto br30
+iface br30 inet static
+        address 192.168.30.100
+        netmask 255.255.255.0
+        gateway 192.168.30.254
+        bridge_stp off
+        bridge_ports vlan30
+        up ifconfig $IFACE up
