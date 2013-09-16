@@ -1,4 +1,5 @@
 set t_Co=256
+syntax on
 
 set ai
 set tabstop=4
