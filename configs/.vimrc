@@ -1,3 +1,5 @@
+set t_Co=256
+
 set ai
 set tabstop=4
 set expandtab
