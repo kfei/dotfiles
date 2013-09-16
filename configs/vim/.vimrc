@@ -12,3 +12,6 @@ xnoremap p pgvy
 autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" Default color schemes to different languages
+autocmd BufEnter * colorscheme jellybeans 
+autocmd BufEnter *.py colorscheme jellybeans
