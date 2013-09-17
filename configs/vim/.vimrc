@@ -16,6 +16,9 @@ call pathogen#helptags()
 set t_Co=256
 syntax on
 
+" Set encoding to UTF-8
+set encoding=utf-8
+
 " Sometimes useful...
 set history=700
 set undolevels=700
@@ -24,6 +27,19 @@ set undolevels=700
 set ai
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab
+
+" For xml, xhtml and html let's use 2 spaces of indentation
+autocmd FileType html,xhtml,xml,yaml,yml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html call s:SelectSyntax()
+
+" For Makefilels let's use tabs
+autocmd FileType make setlocal shiftwidth=4 tabstop=4 softtabstop=4
+
+" JSON Syntax
+autocmd BufNewFile,BufRead *.json call jacinto#syntax()
+
+" Python whitespace
+au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " About search...
 set hlsearch
@@ -49,7 +65,12 @@ autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " README helper
-autocmd BufRead,BufNewFile README.* setlocal spell textwidth=80
+autocmd BufRead,BufNewFile README.* setlocal spell
+
+" Terminal width
+set wrap
+set textwidth=79
+set formatoptions=qrn1
 
 " Default color schemes to different languages
 autocmd BufEnter * colorscheme jellybeans
@@ -105,7 +126,7 @@ set wildignore+=*/coverage/*
 " Settings for python-mode plugin
 map <Leader>g :call RopeGotoDefinition()<CR>
 let ropevim_enable_shortcuts=1
-let g:pymode_rope_goto_def_newwin="vnew"
+let g:pymode_rope_goto_def_newwin='vnew'
 let g:pymode_rope_extended_complete=1
 let g:pymode_breakpoint=0
 let g:pymode_syntax=1
