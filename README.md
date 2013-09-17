@@ -1,4 +1,4 @@
-dot-files
+dotfiles
 ===========
 
-My dot files and scripts.
+My dotfiles and scripts.
