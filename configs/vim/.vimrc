@@ -1,4 +1,4 @@
-" Ofcourse we should be improved.
+" Of course we should be improved.
 set nocompatible
 
 " Map Leader key to <Space>
@@ -7,14 +7,34 @@ let mapleader=" "
 " Use kj as <Esc> alternative
 inoremap kj <Esc>
 
+" Use pathogen to manage plugins
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
 " Set terminal color to 256 and turn syntax highlighting on
 set t_Co=256
 syntax on
+
+" Sometimes useful...
+set history=700
+set undolevels=700
 
 " Default to 4 spaces of auto indentation
 set ai
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab
+
+" About search...
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Disable swap files for file system watcher
+set nobackup
+set nowritebackup
+set noswapfile
 
 filetype plugin on
 filetype indent on
@@ -72,3 +92,23 @@ for prefix in ['i', 'n', 'v']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
+
+" Settings for the powerline plugin
+set laststatus=2
+
+" Settings for ctrlp plugin
+let g:ctrlp_max_height=30
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+
+" Settings for python-mode plugin
+map <Leader>g :call RopeGotoDefinition()<CR>
+let ropevim_enable_shortcuts=1
+let g:pymode_rope_goto_def_newwin="vnew"
+let g:pymode_rope_extended_complete=1
+let g:pymode_breakpoint=0
+let g:pymode_syntax=1
+let g:pymode_syntax_builtin_objs=0
+let g:pymode_syntax_builtin_funcs=0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
