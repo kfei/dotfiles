@@ -28,3 +28,6 @@ autocmd BufRead,BufNewFile README.* setlocal spell textwidth=80
 " Default color schemes to different languages
 autocmd BufEnter * colorscheme jellybeans 
 autocmd BufEnter *.py colorscheme jellybeans
+
+" Turn on wildmenu
+set wildmenu
