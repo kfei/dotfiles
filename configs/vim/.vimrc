@@ -22,6 +22,9 @@ autocmd BufWritePre *.html :%s/\s\+$//e
 " Git commit message helper
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" README helper
+autocmd BufRead,BufNewFile README.* setlocal spell textwidth=80
+
 " Default color schemes to different languages
 autocmd BufEnter * colorscheme jellybeans 
 autocmd BufEnter *.py colorscheme jellybeans
