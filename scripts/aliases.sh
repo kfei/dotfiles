@@ -14,7 +14,7 @@ alias j='jobs -l'
 alias path='echo -e ${PATH//:/\\n}'
 alias ports='netstat -tulanp'
 alias cp='rsync -avh --progress'
-alias psg='ps -ef | grep -v grep | grep'
+alias psg='ps -ef | grep -v grep | grep ' # e.g. psg firefox
 
 # shortcut  for iptables and pass it via sudo#
 alias ipt='sudo /sbin/iptables'
@@ -43,7 +43,7 @@ alias 101='rdesktop -a 16 -g 1280x800 -z -k en-us -T 101 192.168.1.101 -u <usern
 
 # misc
 alias shownet='netstat -nat | grep tcp'
-alias wwwhere='sudo python -m SimpleHTTPServer 80'
+alias wwwhere='sudo python -m SimpleHTTPServer ' # e.g. wwwhere 8888
 alias vncsrv='x11vnc -nopw -display :0.0 -noremote -xinerama -clip xinerama0 -viewonly -forever -shared'
 alias googledns='sudo sh -c " echo '\''nameserver 8.8.8.8'\'' > /etc/resolv.conf "'
 alias html2rsync='rsync -avh --progress --exclude=".*" --include="*.html" --include="*/" --exclude="*"'
