@@ -15,6 +15,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ports='netstat -tulanp'
 alias cp='rsync -avh --progress'
 alias psg='ps -ef | grep -v grep | grep ' # e.g. psg firefox
+alias \:q='exit'
 
 # shortcut  for iptables and pass it via sudo#
 alias ipt='sudo /sbin/iptables'
