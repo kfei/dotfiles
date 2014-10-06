@@ -12,11 +12,12 @@ help:
 	@echo "    update    update dotfiles from upstream"
 
 dotfiles:
-	mv ${BUILDDIR}/.gitconfig ~/.gitconfig
-	mv ${BUILDDIR}/.screenrc ~/.screenrc
-	mv ${BUILDDIR}/.tmux.conf ~/.tmux.conf
+	cp ${BUILDDIR}/.gitconfig ~/.gitconfig
+	cp ${BUILDDIR}/.screenrc ~/.screenrc
+	cp ${BUILDDIR}/.tmux.conf ~/.tmux.conf
 
 update:
+	@echo "Fetching updates from Github..."
 	@git pull
 
 cleanvim:
@@ -24,10 +25,9 @@ cleanvim:
 	-rm -rf ~/.vim
 
 vim:
-	mv ${BUILDDIR}/.vimrc ~/.vimrc
+	cp ${BUILDDIR}/.vimrc ~/.vimrc
 	-mkdir -p ~/.vim
 	-mkdir -p ~/.vim/colors
-	-cd /tmp
 	@echo "Getting Vim colorscheme..."
 	-git clone https://github.com/nanotech/jellybeans.vim.git /tmp/jellybeans
 	-mv /tmp/jellybeans/colors/jellybeans.vim ~/.vim/colors/
