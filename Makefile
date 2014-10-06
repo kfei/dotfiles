@@ -37,6 +37,7 @@ zsh:
 	-curl -L http://install.ohmyz.sh | sh
 	@echo "Customizing .zshrc..."
 	@sed -i 's/robbyrussell/gentoo/g' ~/.zshrc
+	@sed -i 's/plugins=(git)/plugins=()/g' ~/.zshrc
 	@echo "# Now alias some hot commands..." >> ~/.zshrc
 	@cp ${BUILDDIR}/scripts/aliases.sh ~/.aliases.sh
 	@echo "source ~/.aliases.sh" >> ~/.zshrc
