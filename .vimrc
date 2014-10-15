@@ -38,8 +38,9 @@ autocmd FileType make setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " JSON Syntax
 autocmd BufNewFile,BufRead *.json call jacinto#syntax()
 
-" Python whitespace
+" Whitespace
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType ruby setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " About search...
 set hlsearch
