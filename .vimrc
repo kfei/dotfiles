@@ -1,16 +1,29 @@
 " Of course we should be improved.
 set nocompatible
 
+" Required by Vundle
+filetype off
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage plugins (Vundle itself also)
+Plugin 'gmarik/Vundle.vim'
+Plugin 'othree/xml.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+
 " Map Leader key to <Space>
 let mapleader=" "
 
 " Use kj as <Esc> alternative
 inoremap kj <Esc>
-
-" Use pathogen to manage plugins
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
 
 " Set terminal color to 256 and turn syntax highlighting on
 set t_Co=256
@@ -28,19 +41,16 @@ set ai
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab
 
-" For xml, xhtml and html let's use 2 spaces of indentation
-autocmd FileType html,xhtml,xml,yaml,yml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html call s:SelectSyntax()
-
 " For Makefilels let's use tabs
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " JSON Syntax
 autocmd BufNewFile,BufRead *.json call jacinto#syntax()
 
-" Whitespace
+" Whitespace settings
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType ruby setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType html,xhtml,xml,yaml,yml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " About search...
 set hlsearch
@@ -52,9 +62,6 @@ set smartcase
 set nobackup
 set nowritebackup
 set noswapfile
-
-filetype plugin on
-filetype indent on
 
 " Paste and paste and paste... without re-copy
 xnoremap p pgvy
