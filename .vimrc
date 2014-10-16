@@ -14,6 +14,7 @@ Plugin 'othree/xml.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -132,12 +133,28 @@ set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 " Settings for python-mode plugin
-map <Leader>g :call RopeGotoDefinition()<CR>
-let ropevim_enable_shortcuts=1
-let g:pymode_rope_goto_def_newwin='vnew'
-let g:pymode_rope_extended_complete=1
-let g:pymode_breakpoint=0
-let g:pymode_syntax=1
-let g:pymode_syntax_builtin_objs=0
-let g:pymode_syntax_builtin_funcs=0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+au FileType python map <Leader>g :call RopeGotoDefinition()<CR>
+au FileType python let ropevim_enable_shortcuts=1
+au FileType python let g:pymode_rope_goto_def_newwin='vnew'
+au FileType python let g:pymode_rope_extended_complete=1
+au FileType python let g:pymode_breakpoint=0
+au FileType python let g:pymode_syntax=1
+au FileType python let g:pymode_syntax_builtin_objs=0
+au FileType python let g:pymode_syntax_builtin_funcs=0
+au FileType python map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+" Settings for vim-go plugin
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)

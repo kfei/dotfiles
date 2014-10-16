@@ -30,9 +30,9 @@ vim:
 	@echo "Installing Vundle..."
 	-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	@echo "Installing Vim plugins..."
-	-vim -c PluginInstall
+	-vim -c PluginInstall -c qa
 	-mkdir -p ~/.vim/colors
-	@echo "Getting Vim colorscheme..."
+	@echo "Getting Vim colorschemes..."
 	-git clone https://github.com/nanotech/jellybeans.vim.git /tmp/jellybeans
 	-mv /tmp/jellybeans/colors/jellybeans.vim ~/.vim/colors/
 	-rm -rf /tmp/jellybeans
