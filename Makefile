@@ -26,7 +26,11 @@ cleanvim:
 
 vim:
 	cp ${BUILDDIR}/.vimrc ~/.vimrc
-	-mkdir -p ~/.vim
+	-mkdir -p ~/.vim/bundle
+	@echo "Installing Vundle..."
+	-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	@echo "Installing Vim plugins..."
+	-vim -c PluginInstall
 	-mkdir -p ~/.vim/colors
 	@echo "Getting Vim colorscheme..."
 	-git clone https://github.com/nanotech/jellybeans.vim.git /tmp/jellybeans
