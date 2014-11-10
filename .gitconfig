@@ -2,6 +2,9 @@
 	email = kfei@kfei.net 
 	name = kfei 
 
+[push]
+    default = simple
+
 [alias]
 	st = status
 	br = branch
