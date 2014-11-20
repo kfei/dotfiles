@@ -2,6 +2,9 @@
 	email = kfei@kfei.net 
 	name = kfei 
 
+[core]
+    editor = vim
+
 [push]
     default = simple
 
