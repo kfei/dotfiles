@@ -51,3 +51,6 @@ alias vncsrv='x11vnc -nopw -display :0.0 -noremote -xinerama -clip xinerama0 -vi
 alias googledns='sudo sh -c " echo '\''nameserver 8.8.8.8'\'' > /etc/resolv.conf "'
 alias html2rsync='rsync -avh --progress --exclude=".*" --include="*.html" --include="*/" --exclude="*"'
 alias lb='lsblk -o name,label,size,fstype,model'
+
+# for Docker
+alias dkirm="docker images | grep \<none\> | awk '{print $3}' | xargs docker rmi"
