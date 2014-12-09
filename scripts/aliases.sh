@@ -54,3 +54,4 @@ alias lb='lsblk -o name,label,size,fstype,model'
 
 # for Docker
 alias dkirm="docker images | grep \<none\> | awk '{print \$3}' | xargs docker rmi"
+alias dkcrm="docker ps -a | grep Exited | awk '{print \$1}' | xargs docker rm"
