@@ -1,8 +1,0 @@
-# for an nfs storage
-<ip>:<path> <mount_point> nfs   rw,bg,hard,nointr,rsize=65536,wsize=65536,tcp,actimeo=0,vers=3,noac     0 0
-
-# for an sshfs storage
-sshfs#<username>@<host>:/<path>    <mount_point>      fuse    user,noauto,transform_symlinks 0 0
-
-# for a cifs storage
-//<ip_addr>/<share$>		   <mount_point>      cifs    noauto,guest,rw,uid=<uid>,gid=<uid>,iocharset=utf8,sec=ntlm 0 0

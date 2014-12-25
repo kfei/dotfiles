@@ -1,8 +1,0 @@
-# Move this file into your ~/.ssh/config
-Host ServerA
-  Hostname 1.2.3.4
-  IdentityFile ~/.ssh/ServerA.key.pub
-  user username
-  Port 22
-  ForwardX11Trusted yes
-  TCPKeepAlive yes
