@@ -81,9 +81,10 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 
-" Default color schemes to different languages
+" Color schemes for different languages
 autocmd BufEnter * colorscheme jellybeans
 autocmd BufEnter *.py colorscheme jellybeans
+autocmd BufEnter *.rb colorscheme codeschool
 
 " Highlight the trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
