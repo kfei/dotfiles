@@ -15,6 +15,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
+Plugin 'digitaltoad/vim-jade'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
