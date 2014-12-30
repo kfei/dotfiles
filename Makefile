@@ -38,7 +38,8 @@ vim:
 zsh:
 	-curl -L http://install.ohmyz.sh | sh
 	@echo "Customizing .zshrc..."
-	@sed -i 's/robbyrussell/gentoo/g' ~/.zshrc
+	@cp ${BUILDDIR}/zsh/kfei.zsh-theme ~/.oh-my-zsh/themes/
+	@sed -i 's/robbyrussell/kfei/g' ~/.zshrc
 	@sed -i 's/plugins=(git)/plugins=()/g' ~/.zshrc
 	@echo "# Now alias some hot commands..." >> ~/.zshrc
 	cp ${BUILDDIR}/scripts/aliases.sh ~/.aliases.sh
