@@ -45,13 +45,10 @@ set expandtab
 " For Makefilels let's use tabs
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
-" JSON Syntax
-autocmd BufNewFile,BufRead *.json call jacinto#syntax()
-
 " Whitespace settings
-au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType python,javascript setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType ruby setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-au FileType html,xhtml,xml,yaml,yml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType html,xhtml,xml,yaml,yml,json setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " About search...
 set hlsearch
@@ -85,6 +82,7 @@ set formatoptions=qrn1
 autocmd BufEnter * colorscheme jellybeans
 autocmd BufEnter *.py colorscheme jellybeans
 autocmd BufEnter *.rb colorscheme codeschool
+autocmd BufEnter *.haml colorscheme codeschool
 
 " Highlight the trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
