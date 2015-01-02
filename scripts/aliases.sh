@@ -58,5 +58,7 @@ alias tma='tmux -2 attach-session -t'
 alias tmn='tmux -2 new-session -s'
 
 # Docker
+alias dkis='docker images'
+alias dkps='docker ps'
 alias dkirm="docker images | grep \<none\> | awk '{print \$3}' | xargs docker rmi"
 alias dkcrm="docker ps -a | grep Exited | awk '{print \$1}' | xargs docker rm"
