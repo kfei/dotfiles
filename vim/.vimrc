@@ -48,6 +48,7 @@ set expandtab
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Whitespace settings
+au FileType c,cpp setlocal tabstop=8 noexpandtab softtabstop=8 shiftwidth=8
 au FileType python,javascript setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType ruby setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType html,xhtml,xml,yaml,yml,json setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
