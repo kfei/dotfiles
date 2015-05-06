@@ -17,6 +17,7 @@ Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'valloric/MatchTagAlways'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -134,16 +135,20 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
+" Settings for Nerdtree
+map <F3> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
 " Settings for python-mode plugin
-au FileType python map <Leader>g :call RopeGotoDefinition()<CR>
 au FileType python let ropevim_enable_shortcuts=1
-au FileType python let g:pymode_rope_goto_def_newwin='vnew'
+au FileType python let g:pymode_rope_goto_definition_cmd = 'e'
+au FileType python nmap <Leader>g :tab split<CR>:PymodePython rope.goto()<CR>
 au FileType python let g:pymode_rope_extended_complete=1
 au FileType python let g:pymode_breakpoint=0
 au FileType python let g:pymode_syntax=1
 au FileType python let g:pymode_syntax_builtin_objs=0
 au FileType python let g:pymode_syntax_builtin_funcs=0
-au FileType python map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+au FileType python nmap <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Settings for vim-go plugin
 au FileType go nmap <Leader>s <Plug>(go-implements)
