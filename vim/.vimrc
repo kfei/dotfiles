@@ -18,6 +18,7 @@ Plugin 'fatih/vim-go'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
+Plugin 'editorconfig/editorconfig-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
