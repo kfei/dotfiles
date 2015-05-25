@@ -18,6 +18,7 @@ alias cp='rsync -avh --progress'
 alias psg='ps -ef | grep -v grep | grep' # e.g. psg firefox
 alias \:q='exit'
 alias lessf='less +F' # less in following mode (like tail -f)
+alias backup='rsync -avvuP --delete'
 
 # Shortcut for iptables and pass it via sudo
 alias ipt='sudo /sbin/iptables'
