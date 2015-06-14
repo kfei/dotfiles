@@ -19,6 +19,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -33,6 +34,9 @@ inoremap kj <Esc>
 " Set terminal color to 256 and turn syntax highlighting on
 set t_Co=256
 syntax on
+
+" Enable mouse reporting
+set mouse=a
 
 " Set encoding to UTF-8
 set encoding=utf-8
@@ -140,6 +144,9 @@ set wildignore+=*/coverage/*
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+" Settings for Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " Settings for python-mode plugin
 au FileType python let ropevim_enable_shortcuts=1
 au FileType python let g:pymode_rope_goto_definition_cmd = 'e'
@@ -152,6 +159,7 @@ au FileType python let g:pymode_syntax_builtin_funcs=0
 au FileType python nmap <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Settings for vim-go plugin
+let g:go_def_mapping_enabled = 0
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -161,8 +169,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap gd <Plug>(go-def-tab)
