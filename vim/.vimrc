@@ -160,6 +160,7 @@ au FileType python nmap <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-
 
 " Settings for vim-go plugin
 let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
