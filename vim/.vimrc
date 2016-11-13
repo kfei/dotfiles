@@ -70,6 +70,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" (Mac) For the delete key to work as backspace
+set backspace=indent,eol,start
+
 " Paste and paste and paste... without re-copy
 xnoremap p pgvy
 
