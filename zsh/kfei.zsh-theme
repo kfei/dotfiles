@@ -1,5 +1,5 @@
 if [[ -z $ZSH_THEME_KFEI_PREFIX ]]; then
-    ZSH_THEME_KFEI_PREFIX='λ'
+    ZSH_THEME_KFEI_PREFIX='💩'
 fi
 
 PROMPT='%{$fg_bold[cyan]%}$ZSH_THEME_KFEI_PREFIX %{$fg_bold[green]%}%p %{$fg[green]%}%c %{$fg_bold[cyan]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
