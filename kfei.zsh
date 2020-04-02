@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-export PATH="${HOME}/bin:${HOME}/script:${PATH}"
 export HISTSIZE=1000000
 
 # Daily usages
@@ -48,9 +47,6 @@ fi
 if (( $+commands[docker] )) ; then
 	alias dkis='docker images'
 	alias dkps='docker ps'
-	alias dkcrm="docker ps -a | grep Exited | awk '{print \$1}' | xargs docker rm"
-
-	alias docker="sudo docker"
 	alias dklog="docker logs -f"
 	alias dkre="docker restart -t 0"
 	alias dkcrm='docker rm -v $(docker ps -qf "status=exited")'
@@ -61,7 +57,7 @@ if (( $+commands[docker] )) ; then
 		if (($#)) ; then
 			eval docker ${run} ${mntpwd} "$@"
 		else
-			eval docker ${run} ${mntpwd} ubuntu:16.04
+			eval docker ${run} ${mntpwd} ubuntu:18.04
 		fi
 	}
 fi
@@ -86,9 +82,7 @@ else
 	alias df='df -T -h -x supermount'
 fi
 alias l="ls ${lsopt}"
-alias la='l -a'
+alias ll='l -alh'
 alias l1='l -1'
-alias ll='l -l'
-alias lla='l -la'
 alias lsd='l -d */'
 unset lshelp lsopt
