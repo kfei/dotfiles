@@ -13,8 +13,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'othree/xml.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'fatih/vim-go'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
@@ -149,32 +147,3 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Settings for Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" Settings for python-mode plugin
-au FileType python let ropevim_enable_shortcuts=1
-au FileType python let g:pymode_rope_goto_definition_cmd = 'e'
-au FileType python nmap <Leader>g :tab split<CR>:PymodePython rope.goto()<CR>
-au FileType python let g:pymode_rope_extended_complete=1
-au FileType python let g:pymode_breakpoint=0
-au FileType python let g:pymode_syntax=1
-au FileType python let g:pymode_syntax_builtin_objs=0
-au FileType python let g:pymode_syntax_builtin_funcs=0
-au FileType python nmap <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-" Settings for vim-go plugin
-let g:go_def_mapping_enabled = 0
-let g:go_fmt_command = "goimports"
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap gd <Plug>(go-def-tab)
