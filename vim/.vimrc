@@ -33,6 +33,9 @@ inoremap kj <Esc>
 set t_Co=256
 syntax on
 
+" Good to have line numbers on
+set number
+
 " Enable mouse reporting
 set mouse=a
 
