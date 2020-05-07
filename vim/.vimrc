@@ -48,6 +48,9 @@ set ai
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab
 
+" Respect file header
+set modelines=3
+
 " For Makefilels let's use tabs
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
