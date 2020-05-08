@@ -67,6 +67,11 @@ if (( $+commands[tmux] )) ; then
 	alias tmn='tmux -2 new-session -s'
 fi
 
+# To make gpg2 works with Git on MacOS
+if [[ "$(uname)" == "Darwin" ]] ; then
+    alias git='GPG_TTY=$(tty) git'
+fi
+
 # ls
 lsopt="-F"
 if [[ "$(uname)" == "FreeBSD" ]] || [[ "$(uname)" == "Darwin" ]] ; then
