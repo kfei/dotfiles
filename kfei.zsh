@@ -2,7 +2,6 @@
 
 export HISTSIZE=1000000
 
-# Daily usages
 alias c='clear'
 alias ..='cd ..'
 alias ....='cd ../..'
@@ -20,13 +19,8 @@ alias backup='rsync -avvuP --delete'
 alias shownet='netstat -nat | grep tcp'
 alias ports='netstat -tulanp'
 alias netuse='lsof -P -i -n'
-alias lb='lsblk -o name,label,size,fstype,model'
 alias vimo='vim -O'
-
-# Helpers
-alias myip='curl https://ifconfig.co'
-alias wwwhere='sudo python -m SimpleHTTPServer ' # e.g. wwwhere 8888
-alias vncsrv='x11vnc -nopw -display :0.0 -noremote -xinerama -clip xinerama0 -viewonly -forever -shared'
+alias www='python3 -m http.server ' # e.g., www 7788
 
 if (( $+commands[iptables] )) ; then
 	# Shortcut for iptables and pass it via sudo
@@ -42,6 +36,14 @@ fi
 
 if (( $+commands[free] )) ; then
 	alias free='/usr/bin/free -m -l -t'
+fi
+
+if (( $+commands[x11vnc] )) ; then
+    alias vncsrv='x11vnc -nopw -display :0.0 -noremote -xinerama -clip xinerama0 -viewonly -forever -shared'
+fi
+
+if (( $+commands[lsblk] )) ; then
+    alias lb='lsblk -o name,label,size,fstype,model'
 fi
 
 if (( $+commands[docker] )) ; then

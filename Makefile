@@ -13,7 +13,6 @@ help:
 
 dotfiles:
 	cp ${BUILDDIR}/.gitconfig ~/.gitconfig
-	cp ${BUILDDIR}/.screenrc ~/.screenrc
 	cp ${BUILDDIR}/.tmux.conf ~/.tmux.conf
 
 update:

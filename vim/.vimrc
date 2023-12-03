@@ -52,6 +52,10 @@ set ai
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab
 
+" Visually differenciate tabs and trailing spaces
+set list
+set listchars=tab:>-,trail:.,extends:#,nbsp:.
+
 " Respect file header
 set modelines=3
 
